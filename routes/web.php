@@ -49,6 +49,15 @@ Route::get('/products/{id}', 'ProductController@ProductDetails')->name('ProductD
 
 Route::post('/products/comment', 'ProductController@AddComment')->name('ProductComment');
 
+// Categories
+Route::get('/admin/categories', 'CategoryController@index')->name('categories');
+
+Route::post('/admin/categories/create', 'CategoryController@create')->name('createCategory');
+
+Route::post('/admin/categories/edit/{id}', 'CategoryController@edit')->name('editCategory');
+
+Route::delete('/admin/categories/delete/{id}', 'CategoryController@delete')->name('deleteCategory');
+
 Route::get('/mongodb', function () {
     return view('mongodb');
 });
