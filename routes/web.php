@@ -61,6 +61,9 @@ Route::delete('/admin/categories/delete/{id}', 'CategoryController@delete')->nam
 Route::get('/mongodb', function () {
     return view('mongodb');
 });
+
+Route::post('/custom/mongo/login', 'MongoController@login')->name("mongo.lgoin");
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
